@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instaas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instaas.each do |instaa| %>
+      <tr>
+        <td><%= instaa.title %></td>
+        <td><%= instaa.description %></td>
+        <td><%= link_to 'Show', instaa %></td>
+        <td><%= link_to 'Edit', edit_instaa_path(instaa) %></td>
+        <td><%= link_to 'Destroy', instaa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instaa', new_instaa_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @instaa.title %>
+</p>
+
+<div style= "width:400px; height:400px">
+<%= image_tag(@instaa.thumbnail, style:"width:100%; height:auto") %>
+</div>
+
+<%= video_tag(url_for(@instaa.clip), style:"width: 75%; height: 800px") %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @instaa.description %>
+</p>
+
+<%= link_to 'Edit', edit_instaa_path(@instaa) %> |
+<%= link_to 'Back', instaas_path %>

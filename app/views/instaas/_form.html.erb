@@ -1,0 +1,37 @@
+<%= form_with(model: instaa, local: true) do |form| %>
+  <% if instaa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instaa.errors.count, "error") %> prohibited this instaa from being saved:</h2>
+
+      <ul>
+      <% instaa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clip %>
+    <%= form.file_field :clip %>
+  </div> 
+  
+  <div class="field">
+    <%= form.label :thumbnail %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
